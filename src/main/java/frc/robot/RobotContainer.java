@@ -35,7 +35,7 @@ public class RobotContainer {
     // Configure the trigger bindings
     configureBindings();
     TalonFX motor = new TalonFX(0);
-    m_driverController.a().whileTrue(Commands.startEnd(() -> motor.set(1.0), () -> motor.setSpeed(0.0)));
+    m_driverController.a().whileTrue(Commands.startEnd(() -> motor.set(1.0), () -> motor.set(0.0)));
   }
 
   /**
