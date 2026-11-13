@@ -12,6 +12,7 @@ import static edu.wpi.first.units.Units.MetersPerSecond;
 import static edu.wpi.first.units.Units.RadiansPerSecond;
 import static edu.wpi.first.units.Units.RotationsPerSecond;
 
+import com.ctre.phoenix6.hardware.TalonFX;
 import com.ctre.phoenix6.swerve.SwerveModule.DriveRequestType;
 import com.ctre.phoenix6.swerve.SwerveRequest;
 
@@ -51,6 +52,8 @@ public class RobotContainer {
 
     // Configure the trigger bindings
     configureBindings();
+    TalonFX motor = new TalonFX(0);
+    m_driverController.a().whileTrue(Commands.startEnd(() -> motor.set(1.0), () -> motor.set(0.0)));
   }
 
   /**
